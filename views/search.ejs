@@ -1,0 +1,19 @@
+<section class="display_results">
+  <%if(typeof searchResults !== 'undefined' && searchResults.length > 0){%>
+    <section class="result_box">
+    <h1>search results</h1>
+    <ul>
+     <%searchResults.forEach((result)=>{%>
+      <li>
+      <a href="/post/<%=result.slug%>/<%=result.category%>"><%=result.name%></a>
+      </li>
+      <%})%>
+    </ul>
+  </section>
+  <%} else{%>
+  <section class="noresult_container">
+    <img src="/images/notfound.svg" alt="notfound_img">
+    <h1 class="noresult">No matching result</h1>
+  </section>
+  <%}%>
+</section>

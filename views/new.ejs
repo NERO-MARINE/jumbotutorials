@@ -1,0 +1,30 @@
+<main>
+    <%if(typeof languages !== 'undefined' && languages.length > 0){%>
+    <aside id="sidenav">
+      <%categories.forEach((category)=>{%>
+      <header><%=category.name%> Tutorial</header>
+      <%})%>
+  
+      <ul>
+        <%languages.forEach((post)=>{%>
+        <li><a href="/post/<%=post._id%>"><%=post.name%></a></li>
+        <%})%>
+      </ul>
+    </aside>
+    <%}%>
+  
+    <%if(typeof postDetails !== 'undefined' && postDetails.length > 0){%>
+    <div class="page_content">
+      <header class="course_intro">
+        <h2><%=postDetails.category%></h2>
+        <p><%=postDetails.name%></p>
+      </header>
+      <p><%=postDetails.body%></p>
+  
+      
+  
+      <%}%>
+  
+    </div>
+  </main>
+  

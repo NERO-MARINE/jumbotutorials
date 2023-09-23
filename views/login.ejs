@@ -1,0 +1,42 @@
+<body>
+    <form action="/login" method="post" class="login" style="margin-top:90px ;">
+        <!-- for err -->
+        <%if(error != ''){%>
+          <div class="alert-danger">
+            Error: <%= error %>
+        </div>
+      <%}%> 
+      <!-- For error ends -->
+      <div class="imgcontainer">
+          <img src="/images/profile.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container3">
+ 
+              <!-- For csrf -->
+      <!-- name has to be _csrf(this lets the package do the validation for us) -->
+      <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+      <!-- for csrf ends -->
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Username" name="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+          <button type="submit">Login</button>
+          <!-- <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>--->
+        </div> 
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <input type="reset" class="resetbtn2" value="Clear Form">
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+       
+        <div class="container" style="background-color:#f1f1f1">
+            <!-- <span class="new">New? <a href="#">SignUp Here</a></span> -->
+        </div>
+        
+      </form>
+</body>

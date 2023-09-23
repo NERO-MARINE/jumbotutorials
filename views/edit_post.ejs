@@ -1,0 +1,49 @@
+<h3 class="submit_new">EDIT POST</h3>
+    <div class="form-container" style="padding-bottom: 150px;">
+    <form action="/editPost/<%=editPost._id%>?_method=PUT"  method="POST">
+      <!-- Name -->
+      
+         <!-- For csrf -->
+      <!-- name has to be _csrf(this lets the package do the validation for us) -->
+      <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+      <!-- for csrf ends -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Title</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="name" placeholder="Add a title" value="<%=editPost.name%>">
+      </div>
+    </div>
+          <!-- Description -->
+        <div class="row">
+            <div class="col-25">
+              <label for="body">Body</label>
+            </div>
+            <div class="col-75">
+              <textarea id="body" name="body" placeholder="Write something.." style="height:200px"><%=editPost.body%></textarea>
+            </div>
+          </div>
+        
+          <!-- category -->
+          <div class="row">
+            <div class="col-25">
+              <label for="category">Choose Category</label>
+            </div>
+            <div class="col-75">
+              <select id="category" name="category">
+                <option value="<%=editPost.category%>"><%=editPost.category%></option>
+                <option value="select">Select</option>
+                <option value="HTML5">Html5</option>
+                <option value="CSS">CSS</option>
+                <option value="JAVASCRIPT">JAVASCRIPT</option>
+                <option value="HOWTO">HOWTO</option>
+              </select>
+            </div>
+          </div>
+ 
+        <div class="row">
+        <input type="submit" value="Submit">
+        </div>
+    </form>
+  </div>

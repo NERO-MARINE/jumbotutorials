@@ -1,0 +1,57 @@
+  <div class="option_section">
+    <%if(loggedin){%>
+<section class="option_section1">
+  <a href="/create"><i class="fa fa-plus" aria-hidden="true" style="color:#063146;"></i>
+    New Post</a>
+    <a href="/category-add"><i class="fa fa-plus" aria-hidden="true" style="color:#063146;"></i>
+      New Category</a>
+</section>
+  <section class="option_section2">
+    <p>Admin:<%=username%></p>
+    <a href="/logout">Logout</a>
+  </section>
+        
+    <%}%>
+   
+  </div>
+ <section class="category_container2">
+    <%if(categories.length > 0){%>
+  
+       <%categories.forEach((category)=>{%>
+        <a href="/tutorial/<%=category.name%>">
+          <div class="box">
+            <img src="/<%=category.image%>" alt="<%=category.name%>" />
+            <div class="course_name"><%=category.name%></div>
+          </div>
+        </a>
+      <%})%>
+    <%} else{%>
+        <h1>No category</h1>
+      <%}%>
+  </section>
+  
+  
+  <section class="about_section_container">
+  <!-- <div class="about_box">
+    <img src="images/About-us.svg" alt="About_img">
+  </div> -->
+  <div class="about_box">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur quod explicabo maxime sapiente magni dolorum. Facere, autem id! Odio, facere dolore. Incidunt similique iusto alias soluta nam! Expedita corporis eaque assumenda illo itaque nostrum, magnam error placeat enim, quisquam obcaecati atque qui molestias velit voluptatum deserunt repellendus, vitae accusantium. Porro totam corporis at pariatur similique quis, veniam </p>
+  </div>
+  
+  </section>
+  
+  
+  <!-- <section class="services_section_container">
+    <div class="services_box">
+      <h2>What we do</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur quod explicabo maxime sapiente magni dolorum. Facere, autem id! Odio, facere dolore. Incidunt similique iusto alias soluta nam! Expedita corporis eaque assumenda illo itaque nostrum, magnam error placeat enim, quisquam obcaecati atque qui molestias velit voluptatum deserunt repellendus, vitae accusantium. Porro totam corporis at pariatur similique quis, veniam </p>
+    </div>
+    <div class="services_box">
+      <img src="images/service.svg" alt="service_img" width="300">
+    </div> 
+    
+    </section>  -->
+
+

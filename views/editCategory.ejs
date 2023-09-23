@@ -1,0 +1,45 @@
+<h3 class="submit_new">EDIT CATEGORY</h3>
+<div class="form-container" style="padding-bottom: 150px;">
+  <form action="/editCategory/<%=toBeEditedCategory._id%>?_method=PUT&_csrf=<%= csrfToken %>" enctype="multipart/form-data" method="POST">
+    <!-- Name -->
+    
+         <!-- For csrf -->
+      <!-- name has to be _csrf(this lets the package do the validation for us) -->
+      <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+      <!-- for csrf ends -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Add new category</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="name" value="<%=toBeEditedCategory.name%>" placeholder="Add a title" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="body">Body</label>
+      </div>
+      <div class="col-75">
+        <textarea id="body" name="body" placeholder="Write something.." style="height:200px"><%=toBeEditedCategory.body%></textarea>
+      </div>
+    </div>
+
+    <!-- image -->
+    <div class="row">
+      <div class="col-25">
+        <label for="image">Add Image</label>
+      </div>
+      <div class="col-75">
+        <input type="file" id="image" name="image" placeholder="upload an image" accept="image/"/>
+      </div><br><br>
+      <img src="/<%=toBeEditedCategory.image%>" alt="/<%=toBeEditedCategory.name%>" width="150" height="150">
+      <br><br>
+      <input type="hidden" value="<%= toBeEditedCategory.image %>" name="old_image" readonly>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+</div>

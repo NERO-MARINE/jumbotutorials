@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Free Web Tutorials">
+    <meta name="keywords" content="HTML,CSS,Python,JavaScript,Nodejs,C++,Java,PHP">
+    <meta name="author" content="Micah Atoma, Oghenero Okerri and Runo Egedegbe">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width">
+    <title>Jumbotutorials | <%=title%></title>
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- prism css  -->
+    <link rel="stylesheet" href="/prism/prism.css">
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body onresize="trans()">
+    <!-- Code Removed starts -->
+ <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="nav-brand"><a href="/">JumboTutorial</a></div>
+                <div class="toggler">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="nav-links">
+                    <ul id="menu">
+                        <li><a href="/"> <i class="fa fa-home"></i></a></li>
+                        <li><a href="/tutorial/HOWTO">How To</a></li>
+                        <li><a href="/">Tutorials</a></li>
+                        <li><a href="#About">About Us</a></li>
+                    </ul>
+                </div>
+                <div id="searchbar">
+                    <!-- <form action="/search" method="POST">
+                        <input type="search" placeholder="search....">
+                   </form> -->
+                   <form action="/search" method="post">
+                    <!-- name has to be _csrf(this lets the package do the validation for us) -- -->
+               <%if(typeof csrfToken !== 'undefined'){%>
+                 <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+               <%}%>
+           <!-- for csrf ends -- -->
+                   <!-- <i class="fa fa-search"></i> -->
+                   <input type="search" name="searchPost" placeholder="search..." style="color:black;"/>
+                 </form>
+                </div>
+            </nav>
+        </header>
+    </div>
+<!-- Code Removed Ends -->
+    <!-- <a class="nav-link active" aria-current="page" href="/">Home</a> -->
+
+      <div class="main_container">
+        <%-body%>
+      </div>
+      
+<br><br><br>
+    <footer class="fter"> &copy; 2023 Jumbocoders | <a href="/privacy-policy">Privacy policy</a></footer>
+
+    <!-- Custom js -->
+    <script src="/js/script.js"></script>
+    <!-- prism js -->
+    <script src="/prism/prism.js"></script>
+  </body>
+</html>
